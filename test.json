@@ -1,0 +1,5 @@
+{
+    "hostname" : "nfmp3.novalocal",
+    "rhelRel" : "7.4",
+    "selinuxStatus" : "disabled"
+}

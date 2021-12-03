@@ -5,6 +5,7 @@
     :items="projects"
     :items-per-page="5"
     class="elevation-1"
+    @click:row="handleClickProject"
   ></v-data-table>
   </v-app>
 
@@ -17,7 +18,6 @@
 
 export default {
     mounted () {
-        //this.customerId = store.state.customerId
         this.getProjectsByCustomer(store.state.customerId)
         this.projects = this.projects.slice(1,)
         console.log(this.projects)
@@ -63,7 +63,14 @@ export default {
                     })
                 })
             })
-        }
+        },
+        handleClickProject : function (row) {
+           this.selectedProjectId = true
+            store.state.projectId = row.projectId
+            this.$router.push('/projectServers')
+            
+        },
+
     },
     
 }
